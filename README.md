@@ -1,6 +1,3 @@
-# Video-Chat-App
-Django &amp; JavaScript.
-
 # Video-Chat-App---Django
 A Video Chat Web Application Using Django and JavaScprit.
 
