@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/7e94a85617.js" crossorigin="anonymous"></script>
+  <title>Django Video Chat</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <h4 class="text-center">VIDEO CHAT APP <img src="{% static 'css/icon.png' %}" height="28px"></h4>
+  <h3 id="label-username">USERNAME</h3>
+  <div>
+    <input id="username"><button id="btn-join" class="btn">Join Room <i class="fas fa-sign-in-alt"></i></button>
+    <button id="btn-toggle-audio" class="btn btn-outline-light btn-dark">Audio Mute</button>
+    <button id="btn-toggle-video" class="btn btn-outline-light btn-dark">Video Off</button>
+  </div>
+
+  <div class="main-grid-container">
+    <div id="video-container">
+      <div><video id="local-video" autoplay playsinline></video></div>
+    </div>
+
+    <button class="open-button btn btn-outline-dark btn-lg" onclick="openForm()">Chat <i class="far fa-comments"></i></button>
+
+    <div class="chat-popup" id="myForm">
+      <form class="form-container">
+        <h1>Chat <i class="far fa-comments"></i></h1>
+        <div id="messages">
+          <p id="message-list"></p>
+        </div>
+
+        <label for="msg"><b>Message</b></label>
+        <textarea id="msg" placeholder="Type message.." name="msg" required></textarea>
+
+        <button type="submit" id="btn-send-msg" class="btn">Send <i class="far fa-paper-plane"></i></button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close <i class="fas fa-times"></i></button>
+      </form>
+    </div>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
